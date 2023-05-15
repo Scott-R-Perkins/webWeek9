@@ -1,17 +1,32 @@
-import { ColorModeScript } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import React, { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Root from './root/root';
+import Home from './home/home';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root/>
+  },
+  {
+    path: "/home",
+    element: <Home/>
+  }
+])
+
+
 root.render(
   <StrictMode>
-    <ColorModeScript />
-    <App />
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
   </StrictMode>
 );
 

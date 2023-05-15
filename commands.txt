@@ -1,6 +1,25 @@
 Frontend
 npx create-react-app frontend --template @chakra-ui
+npm i react-router-dom
+
+"rafc" to quickly create template for pages
 
 
 Backend
 dotnet new webapi -o backend
+
+dotnet new tool-manifest
+dotnet tool install dotnet-ef
+dotnet tool install dotnet-aspnet-codegenerator
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.Sqlserver
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+
+
+create models folder and 3 models based on the requirements from the lab, use whats there now that was copoed from Oliver as examples.
+
+
+Look into mapping table for M:M relationships (what I copied from oliver should work?)
+
