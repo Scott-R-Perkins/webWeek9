@@ -31,7 +31,7 @@ create models folder and 3 models based on the requirements from the lab, use wh
 Look into mapping table for M:M relationships (what I copied from oliver should work?)
 
 after models, scaffold the controllers with dotnet-aspnet-codegenerator
-dotnet aspnet-codegenerator controller -name AnimalsController -api -m Animal -dc TestDbContext -outDir Controllers
+dotnet aspnet-codegenerator controller -name FoodController -api -m Food -dc Week9Lab7Context -outDir Controllers
 
 
 after finishing the stuff below, do migration
@@ -51,6 +51,7 @@ call it from the context file
 public overrride void OnModelCreating(ModelBuilder builder){
     var manufacturers = Seed.GetManufacturers(manufacturers);
     var food = Seed.GetFood(food);
+    var vehicle = seed.GetVehicles(vehicle);
     var ManufacturerFood = Seed.ManufacturerFood(manufacturers, food);
 }
 
@@ -89,8 +90,8 @@ public static class Seed{
         var faker = new Faker<Food>().Rules((f, food) =>
         {
             food.Id = FoodId++,
-            food.Name = f.Company.CompanyName();
-            food.Location = f.Address.Country();
+            food.Name = f.Lorem.Word();
+            food.Location = f.Lorem.Paragraph();
         });    
         return Faker.Generate(count);
     }
