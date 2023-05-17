@@ -17,8 +17,6 @@ public class Week9Lab7Context : DbContext
 
     public object? Potion { get; set; }
 
-    public object? ManufacturerFood { get; set; }
-
    protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.Entity<Weapon>().HasData(
