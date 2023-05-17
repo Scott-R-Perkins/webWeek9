@@ -52,9 +52,8 @@ Create DTO's based on requests and responses that the frontend requires, can be 
 Frontend
 Create Frontend interface (Yoink the stuff from the other store we made?)
 Link it to the items from my shop
-Frontend should have a dashboard area to allow modifying
-    existing items, creating new items and deletijng items from 
-        the store.
+Frontend should have a dashboard area to allow modifying existing items, creating new items and 
+    deleting items from the store.
 Filtering method for items (not sure what I'll do for this yet)
 sorting method (sort by dps/ability power for weapons, physical/magical defense for armour and potion potency for potions)
 Search bar that allows searching by name.
