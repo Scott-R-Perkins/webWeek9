@@ -31,26 +31,33 @@ create models folder and 3 models based on the requirements from the lab, use wh
 Look into mapping table for M:M relationships (what I copied from oliver should work?)
 
 after models, scaffold the controllers with dotnet-aspnet-codegenerator
-dotnet aspnet-codegenerator controller -name FoodController -api -m Food -dc Week9Lab7Context -outDir Controllers
+dotnet aspnet-codegenerator controller -name WeaponController -api -m Weapon -dc Week9Lab7Context -outDir Controllers
 
 
 after finishing the stuff below, do migration
 
-dotnet ef migrations add initial -c *context here* -o Data/Migrations/InitialMigration
+dotnet ef migrations add initial -c FantasyDBContext -o Data/Migrations/InitialMigration
 dotnet ef database update
 dotnet run
 
 
 
 TODO:
-Backend
-Generate controllers
-Migrate and update database
-Only create endpoints the frontend will use, no hanging endpoints
+backend
+Only create endpoints the frontend will use, no hanging endpoints (ez)
+    Delete any endpoints the frontend arent using.
+    Honestly might use all except Get/specific ID
 Create DTO's based on requests and responses that the frontend requires, can be mapped to the data model
 
+Endpoints are all working
+    Get/Delete are ez
+    For post, I remove the ID value as it will give it an incrementing ID, trying to set it myself, even if its the one it would give it anyway cuases and error 
+    For put I put the ID in the field at the top then need to add everything I want, it will modify the item so I need to make sure I fill in every field
+        Easy way to do this would be to copy it from Get first, then edit what I want.
+
+
 Frontend
-Create Frontend interface (Yoink the stuff from the other store we made?)
+Create Frontend interface (Yoink the stuff from the other store we made)
 Link it to the items from my shop
 Frontend should have a dashboard area to allow modifying existing items, creating new items and 
     deleting items from the store.
@@ -59,68 +66,20 @@ sorting method (sort by dps/ability power for weapons, physical/magical defense 
 Search bar that allows searching by name.
 
 
-Seeding data
-in data folder
-Seed.cs
-call it from the context file 
-
-public overrride void OnModelCreating(ModelBuilder builder){
-    var manufacturers = Seed.GetManufacturers(manufacturers);
-    var food = Seed.GetFood(food);
-    var vehicle = seed.GetVehicles(vehicle);
-    var ManufacturerFood = Seed.ManufacturerFood(manufacturers, food);
-}
 
 
 
-//part of the bogus package, look into this
+fetch url is localhost:8000/api/object
+example
+localhost:8000/api/armour
+so maybe do a seperate page for each thing?
+or seperate them on the same page?
+We had to have a filter, maybe look into a dropdown that will show all weapons and nothing else, same for the others.
 
-using backend.Data;
+this is how oliver did his env variable and fetch 
 
-public static class Seed{
-    public static List<Manufacturers> GetManufacturers(int count 10){
-        var ManucaturerId = 1;
-        var faker = new Faker<Manufaturer>().Rules((f, m) =>
-        {
-            m.Id = ManucaturerId++,
-            m.Name = f.Company.CompanyName();
-            m.Location = f.Address.Country();
-        });    
-        return Faker.Generate(count);
-    }
-    
-    public static List<Vehicle> GetVehicles(List<Manufacturer> manufacturers, int count 10){
-        var vehicleId = 1;
-        var faker = new Faker<Vehicle>()
-        .Rules((f, v) =>
-        {
-            v.Id = vehicleId++,
-            v.Name = f.Vehicle.Model();
-            v.Speed - f.Vehicle.Random.Int(20, 100);
-            v.ManucaturerId = f.PickRandom(manufacturers).Id;
-        });  
-        return faker.Generate(count);
-    }
-    public static List<Food> GetFood(int count 10){
-        var FoodId = 1;
-        var faker = new Faker<Food>().Rules((f, food) =>
-        {
-            food.Id = FoodId++,
-            food.Name = f.Lorem.Word();
-            food.Location = f.Lorem.Paragraph();
-        });    
-        return Faker.Generate(count);
-    }
-    public static List<ManufacturersFood> ManufacturerFoods(List<Manufacturer> manufacturers, List<Food> foods ,int count 10)
-    {
-        var mfList = new List<ManufacturerFood>();
-        var ManufacturerFoodId = 0;
-        foreach(var food in foods)
-        {
-            ManufacturerFoodId++;
-            mfList.Add(new ManufacturerFood(Id = ManufacturerFoodId, FoodId = food.id, ManucaturerId = Random.Shared.Next(manufacturers.count)+1));   might be {} after new ManufacturerFood
-        }
-        return mfList;
-    }
-}
+fetch(`$(process.end.REACT_APP_BACKEND_URL)/Foods`) 
+
+So I could just have the env variable as localhost:8000/api
+then each fetch does the /Weapon /Armour /Potion
 

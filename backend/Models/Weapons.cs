@@ -7,16 +7,15 @@ public class Weapon
     public int? attackValue { get; set; }
     public double? attackSpeed { get; set; }
     public double? dps { get; set; }
-    public double? abilityDamageModifier { get; set; } //Percentage
+    public double? abilityDamageModifier { get; set; }
+    public string? flavourText { get; set; }
+    public int? price { get; set; }
 
-    public Weapon(int weaponId, string name, int attackValue, double attackSpeed, double abilityDamageModifier){
-        this.weaponId = weaponId;
-        this.name = name;
-        this.attackValue = attackValue;
-        this.attackSpeed = attackSpeed;
-        this.dps = attackSpeed * attackValue;
-        this.abilityDamageModifier = abilityDamageModifier;
+    public Weapon(){
+
+    }
+
+    public double getDps(int attackSpeed, int attackValue){
+        return attackSpeed * attackValue;
     }
 }
-
-//Will this need a constructor to set the dps, could look at calcing dps before creating the item?
