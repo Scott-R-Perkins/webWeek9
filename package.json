@@ -1,5 +1,8 @@
 {
-  "devDependencies": {
-    "@faker-js/faker": "^8.0.1"
+  "dependencies": {
+    "react-router-dom": "^6.11.2"
+  },
+  "scripts": {
+    "start": "node app.js"
   }
 }

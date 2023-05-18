@@ -1,29 +1,30 @@
 import { Box, Heading, Spinner, Text, Button } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 
-export const home = () => {
+export const Home = () => {
 
-    const [foods, setFoods] = useState([])
+    const [weapons, setWeapons] = useState([])
 
     useEffect(() => {
-        if (foods.length === 0)
-            fetch(`$(process.end.REACT_APP_BACKEND_URL)/Foods`)
+        if (weapons.length === 0)
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/Weapons`)
                 .then(response => response.json())
-                .then(data => setFoods(data));
-    }, [foods]);
+                .then(data => setWeapons(data));
+    }, [weapons]);
 
-    console.log(foods);
+    console.log(weapons);
 
-    if (foods.length === 0) return <Spinner />;
+    if (weapons.length === 0) return <Spinner />;
 
     return (
         <Box>
             <Heading>Home</Heading>
             <Box>
-                {foods.map(food => (
-                    <Text key={food.id}>{food.food.name}</Text>
+                {weapons.map(weapon => (
+                    <Text key={weapon.id}>{weapon.name}</Text>
                 ))}
             </Box>
         </Box>
     )
 }
+export default Home;

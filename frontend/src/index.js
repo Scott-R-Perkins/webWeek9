@@ -4,8 +4,8 @@ import * as ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import Root from './root/root';
-import Home from './home/home';
+import Root from './root/Root';
+import Home from './home/Home';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
