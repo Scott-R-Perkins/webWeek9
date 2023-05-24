@@ -146,19 +146,19 @@ public class Week9Lab7Context : DbContext
             },
             new Potion(){
                 potionId = 1,
-                name = "Minor Dextrous Potion",
+                name = "Minor Dexterity Potion",
                 potionDescription = "Drink boost your dexterity a small amount, Boost potency: ",
                 potionPotencyValue = 75
             },
             new Potion(){
                 potionId = 1,
-                name = "Dextrous Potion",
+                name = "Dexterity Potion",
                 potionDescription = "Drink boost your dexterity a medium amount, Boost potency: ",
                 potionPotencyValue = 150
             },
             new Potion(){
                 potionId = 1,
-                name = "Major Dextrous Potion",
+                name = "Major Dexterity Potion",
                 potionDescription = "Drink boost your dexterity a large amount, Boost potency: ",
                 potionPotencyValue = 250
             }
