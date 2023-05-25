@@ -63,7 +63,9 @@ const Home = () => {
 
     const renderItem = (item, category) => (
         <Box p={2} borderWidth={1} borderRadius="lg" maxW="sm">
-            <Image borderRadius="md" src={placeholderImgURL} />
+            {/* Need to save an img url as part of the items on the backend, then call them as item.imgUrl or 
+                something instead of this placeholder*/}
+            <Image borderRadius="md" src={placeholderImgURL} /> 
             <Text fontSize='md'>{item.name}</Text>
             {category === 'weapon' &&
                 <>
