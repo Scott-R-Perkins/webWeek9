@@ -10,7 +10,6 @@ const Home = () => {
     const [potions, setPotions] = useState([])
     const [cart, setCart] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const placeholderImgURL = "https://via.placeholder.com/150";
     const imgurUrl = "https://i.imgur.com/";
 
     useEffect(() => {
@@ -64,32 +63,30 @@ const Home = () => {
 
     const renderItem = (item, category) => (
         <Box p={2} borderWidth={1} borderRadius="lg" maxW="sm">
-            {/* Need to save an img url as part of the items on the backend, then call them as item.imgUrl or 
-                something instead of this placeholder*/}
             <Image borderRadius="md" src={imgurUrl + item.imgURL + ".png"} /> 
-            <Text fontSize='md'>{item.name}</Text>
+            <Text fontSize='md' color={'purple.600'}>{item.name}</Text>
             {category === 'weapon' &&
                 <>
-                    <Text fontSize='sm'>Attack Value: {item.attackValue}</Text>
-                    <Text fontSize='sm'>Attack Speed: {item.attackSpeed}</Text>
-                    <Text fontSize='sm'>DPS: {item.dps}</Text>
-                    <Text fontSize='sm'>Ability damage modifier: {item.abilityDamageModifier}</Text>
+                    <Text fontSize='sm' color={'red.600'}>Attack Value: {item.attackValue}</Text>
+                    <Text fontSize='sm' color={'red.600'}>Attack Speed: {item.attackSpeed}</Text>
+                    <Text fontSize='sm' color={'blue.600'}>DPS: {item.dps}</Text>
+                    <Text fontSize='sm' color={'blue.600'}>Ability damage modifier: {item.abilityDamageModifier}</Text>
                 </>
             }
             {category === 'armour' &&
                 <>
-                    <Text fontSize='sm'>Physical Defence: {item.physicalDefenceValue}</Text>
-                    <Text fontSize='sm'>Magical Defence: {item.magicalDefenceValue}</Text>
+                    <Text fontSize='sm' color={'red.600'}>Physical Defence: {item.physicalDefenceValue}</Text>
+                    <Text fontSize='sm' color={'blue.600'}>Magical Defence: {item.magicalDefenceValue}</Text>
                 </>
             }
             {category === 'potion' &&
                 <>
-                    <Text fontSize='sm'>Effect: {item.potionDescription}</Text>
-                    <Text fontSize='sm'>Potency: {item.potionPotencyValue}</Text>
+                    <Text fontSize='sm' color={'orange.400'}>Effect: {item.potionDescription}</Text>
+                    <Text fontSize='sm' color={'red.600'}>Potency: {item.potionPotencyValue}</Text>
                 </>
             }
-            <Text fontSize='sm'>Price: {item.price} gold</Text>
-            <Text fontSize='sm'>{item.flavourText}</Text>
+            <Text fontSize='sm' color={'goldenrod'}>Price: {item.price} gold</Text>
+            <Text fontSize='sm' color={'orange.400'}>{item.flavourText}</Text>
             <Button size="sm" onClick={() => addToCart(item, category)}>Add to Cart</Button>
         </Box>
     );
@@ -139,51 +136,3 @@ const Home = () => {
     )
 }
 export default Home;
-
-
-
-
-
-//     return (
-//         <Box>
-//             <Heading p={4}>Weapons</Heading>
-//             <Box>
-//                 {weapons.map(weapon => (
-//                     <Box p={4} borderWidth={1} borderRadius="lg">
-//                         <Text key={weapon.weaponId} color={'purple.600'} fontSize='2xl'>{weapon.name}<br></br></Text>
-//                         <Text color={'red.600'}>Attack Value: {weapon.attackValue}<br></br></Text>
-//                         <Text color={'red.600'}> Attack Speed: {weapon.attackSpeed}<br></br></Text>
-//                         <Text color={'blue.600'}> DPS: {weapon.dps}<br></br></Text>
-//                         <Text color={'blue.600'}> Ability damage modifier {weapon.abilityDamageModifier}<br></br></Text>
-//                         <Text color={'goldenrod'}> Price: {weapon.price} gold<br></br></Text>
-//                         <Text color={'orange.400'}> {weapon.flavourText}<br></br> <br></br> </Text>
-//                     </Box>
-//                 ))}
-//             </Box>
-//             <Heading p={4}>Armour</Heading>
-//             <Box>
-//                 {armour.map(armour => (
-//                     <Box p={4} borderWidth={1} borderRadius="lg">
-//                         <Text key={armour.armourId} color={'purple.600'} fontSize='2xl'>{armour.name}<br></br></Text>
-//                         <Text color={'red.600'}>Physical Defence: {armour.physicalDefenceValue} <br></br></Text>
-//                         <Text color={'blue.600'}>Magical Defence: {armour.magicalDefenceValue} <br></br></Text>
-//                         <Text color={'goldenrod'}>Price: {armour.price} gold<br></br></Text>
-//                         <Text color={'orange.400'}>{armour.flavourText}<br></br><br></br></Text>
-//                     </Box>
-//                 ))}
-//             </Box>
-//             <Heading p={4}>Potions</Heading>
-//             <Box>
-//                 {potions.map(potions => (
-//                     <Box p={4} borderWidth={1} borderRadius="lg">
-//                         <Text key={potions.potionId} color={'purple.600'} fontSize='2xl'>{potions.name}<br></br></Text>
-//                         <Text color={'orange.400'}>Effect: {potions.potionDescription}<br></br></Text>
-//                         <Text color={'red.600'}>Potency: {potions.potionPotencyValue}<br></br></Text>
-//                         <Text color={'goldenrod'}>Price: {potions.price} gold<br></br><br></br></Text>
-//                     </Box>
-//                 ))}
-//             </Box>
-//         </Box>
-//     )
-// }
-// export default Home;
