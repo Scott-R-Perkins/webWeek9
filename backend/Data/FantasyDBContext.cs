@@ -30,7 +30,7 @@ using backend.Models;
                 abilityDamageModifier = 140,
                 flavourText = "Sword forged in imitation of the sword of the late king and traitor, Augustus, VII",
                 price = 650,
-                imgURL = "HXe6HWw.png"
+                imgURL = "HXe6HWw"
             },
             new Weapon(){
                 weaponId = 2,
@@ -41,7 +41,7 @@ using backend.Models;
                 abilityDamageModifier = 170,
                 flavourText = "A monstrous mace with the power to shatter shields and cave in skulls.",
                 price = 400,
-                imgURL = "DJjnBts.png"
+                imgURL = "DJjnBts"
             },
             new Weapon(){
                 weaponId = 3,
@@ -52,7 +52,7 @@ using backend.Models;
                 abilityDamageModifier = 160,
                 flavourText = "Twin curved daggers build for attacking quickly from the shadows.",
                 price = 250,
-                imgURL = "yHx2Lc5.png"
+                imgURL = "yHx2Lc5"
             },
             new Weapon(){
                 weaponId = 4,
@@ -85,7 +85,7 @@ using backend.Models;
                 magicalDefenceValue = 230,
                 flavourText = "Strong plate armour capable of withstanding strong physical blows.",
                 price = 680,
-                imgURL = "T3vSkoI.png"
+                imgURL = "T3vSkoI"
             },
             new Armour(){
                 armourId = 2,
@@ -94,7 +94,7 @@ using backend.Models;
                 magicalDefenceValue = 550,
                 flavourText = "Robes imbued with magical wards to boost both magical offense and defense.",
                 price = 700,
-                imgURL = "S6MLT0P.png"
+                imgURL = "S6MLT0P"
             },
             new Armour(){
                 armourId = 3,
@@ -103,7 +103,7 @@ using backend.Models;
                 magicalDefenceValue = 390,
                 flavourText = "Flexible armour allowing freedom of movement for quick strikes while providing a balanced defense.",
                 price = 650,
-                imgURL = "GDE6NHc.png"
+                imgURL = "GDE6NHc"
             }
         );
         builder.Entity<Potion>().HasData(
