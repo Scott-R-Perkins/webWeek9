@@ -113,7 +113,7 @@ using backend.Models;
                 potionDescription = "Drink to restore a small amount of health, Heal potency: ",
                 potionPotencyValue = 75,
                 price = 20,
-                imgURL = ""
+                imgURL = "BtFkFWn"
             },
             new Potion(){
                 potionId = 2,
@@ -121,7 +121,7 @@ using backend.Models;
                 potionDescription = "Drink to restore a medium amount of health, Heal potency: ",
                 potionPotencyValue = 150,
                 price = 70,
-                imgURL = ""
+                imgURL = "hQU0HQG"
             },
             new Potion(){
                 potionId = 3,
@@ -129,7 +129,7 @@ using backend.Models;
                 potionDescription = "Drink to restore a large amount of health, Heal potency: ",
                 potionPotencyValue = 250,
                 price = 200,
-                imgURL = ""
+                imgURL = "hOL3mew"
             },
             new Potion(){
                 potionId = 4,
@@ -137,7 +137,7 @@ using backend.Models;
                 potionDescription = "Drink boost your strength a small amount, Boost potency: ",
                 potionPotencyValue = 75,
                 price = 20,
-                imgURL = ""
+                imgURL = "OBV95Xr"
             },
             new Potion(){
                 potionId = 5,
@@ -145,7 +145,7 @@ using backend.Models;
                 potionDescription = "Drink boost your strength a medium amount, Boost potency: ",
                 potionPotencyValue = 150,
                 price = 70,
-                imgURL = ""
+                imgURL = "lajwEJd"
             },
             new Potion(){
                 potionId = 6,
@@ -153,7 +153,7 @@ using backend.Models;
                 potionDescription = "Drink boost your strength a large amount, Boost potency: ",
                 potionPotencyValue = 250,
                 price = 200,
-                imgURL = ""
+                imgURL = "ZwNIHHE"
             },
             new Potion(){
                 potionId = 7,
@@ -161,7 +161,7 @@ using backend.Models;
                 potionDescription = "Drink boost your intelligence a small amount, Boost potency: ",
                 potionPotencyValue = 75,
                 price = 20,
-                imgURL = ""
+                imgURL = "RCosYt9"
             },
             new Potion(){
                 potionId = 8,
@@ -169,7 +169,7 @@ using backend.Models;
                 potionDescription = "Drink boost your intelligence a medium amount, Boost potency: ",
                 potionPotencyValue = 150,
                 price = 70,
-                imgURL = ""
+                imgURL = "MEUkEX7"
             },
             new Potion(){
                 potionId = 9,
@@ -177,7 +177,7 @@ using backend.Models;
                 potionDescription = "Drink boost your intelligence a large amount, Boost potency: ",
                 potionPotencyValue = 250,
                 price = 200,
-                imgURL = ""
+                imgURL = "5JKaqbG"
             },
             new Potion(){
                 potionId = 10,
@@ -185,7 +185,7 @@ using backend.Models;
                 potionDescription = "Drink boost your dexterity a small amount, Boost potency: ",
                 potionPotencyValue = 75,
                 price = 20,
-                imgURL = ""
+                imgURL = "TC4TKiW"
             },
             new Potion(){
                 potionId = 11,
@@ -193,7 +193,7 @@ using backend.Models;
                 potionDescription = "Drink boost your dexterity a medium amount, Boost potency: ",
                 potionPotencyValue = 150,
                 price = 70,
-                imgURL = ""
+                imgURL = "teGVnVo"
             },
             new Potion(){
                 potionId = 12,
@@ -201,7 +201,7 @@ using backend.Models;
                 potionDescription = "Drink boost your dexterity a large amount, Boost potency: ",
                 potionPotencyValue = 250,
                 price = 200,
-                imgURL = ""
+                imgURL = "Mu7z0Dq"
             }
         );
     }

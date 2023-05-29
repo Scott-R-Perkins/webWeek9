@@ -44,26 +44,21 @@ dotnet run
 
 TODO:
 backend
-Only create endpoints the frontend will use, no hanging endpoints (ez)
-    Delete any endpoints the frontend arent using.
-    Honestly might use all except Get/specific ID
 Create DTO's based on requests and responses that the frontend requires, can be mapped to the data model
 
-Endpoints are all working
+Endpoints are all there, need to test if they are all working
     Get/Delete are ez
     For post, I remove the ID value as it will give it an incrementing ID, trying to set it myself, even if its the one it would give it anyway cuases and error 
     For put I put the ID in the field at the top then need to add everything I want, it will modify the item so I need to make sure I fill in every field
         Easy way to do this would be to copy it from Get first, then edit what I want.
+Finish all the img urls on the database (Staves)
 
 
 Frontend
-Create Frontend interface (Yoink the stuff from the other store we made)
-Link it to the items from my shop
 Frontend should have a dashboard area to allow modifying existing items, creating new items and 
-    deleting items from the store.
+    deleting items from the store. (mostly done)
 Filtering method for items (not sure what I'll do for this yet)
 sorting method (sort by dps/ability power for weapons, physical/magical defense for armour and potion potency for potions)
-Search bar that allows searching by name.
 
 
 
