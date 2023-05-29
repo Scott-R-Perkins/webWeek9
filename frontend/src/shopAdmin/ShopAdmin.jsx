@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, Input, FormLabel, FormControl, Heading, Spinner, Text, VStack, HStack, Flex, Select } from '@chakra-ui/react';
+import { Box, Button, Input, Heading, Spinner, Text, VStack, HStack, Flex, Select } from '@chakra-ui/react';
 
 const ShopAdmin = () => {
     const [weapons, setWeapons] = useState([])
@@ -93,14 +93,12 @@ const ShopAdmin = () => {
         
     };
 
-    const deleteItem = async () => {
-        // Use the item ID for deletion
+    const deleteItem = async (itemId, itemType) => {
         await fetch(`${baseURL}/${itemType}/${itemId}`, {
             method: 'DELETE',
         })
             .then(response => response.json())
             .then(() => {
-                // Filter the deleted item out of the current items
                 if (itemType === 'Weapon') {
                     setWeapons(weapons.filter(weapon => weapon.id !== itemId));
                 } else if (itemType === 'Armour') {
@@ -111,7 +109,7 @@ const ShopAdmin = () => {
             });
     }
 
-    const updateItem = async () => {
+    const updateItem = async (itemId) => {
         let body = {
             name: itemName,
             price: itemPrice,
@@ -139,8 +137,6 @@ const ShopAdmin = () => {
             };
         }
         setItemToEdit(null);
-    
-        // Use the item ID for updating
         await fetch(`${baseURL}/${itemType}/${itemId}`, {
             method: 'PUT',
             headers: {
@@ -150,7 +146,6 @@ const ShopAdmin = () => {
         })
             .then(response => response.json())
             .then(data => {
-                // Update the item in the current items
                 if (itemType === 'Weapon') {
                     setWeapons(weapons.map(weapon => weapon.id === itemId ? data : weapon));
                 } else if (itemType === 'Armour') {

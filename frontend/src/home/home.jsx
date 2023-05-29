@@ -59,6 +59,14 @@ const Home = () => {
             setCart([...cart, { ...item, count: 1, id: itemId }]);
         }
     };
+    const submitCart = () => {
+        if (cart.length === 0) {
+            alert("Your cart is empty. Please add some items before checking out.");
+        } else {
+            alert("Your order has been placed successfully! Thank you for shopping with us.");
+            setCart([]);
+        }
+    };
 
 
     const renderItem = (item, category) => (
@@ -130,6 +138,7 @@ const Home = () => {
                     </Box>
                 ))}
                 <Text mt={4}>Total Cart Value: {cart.reduce((acc, item) => acc + (item.count * item.price), 0)} gold</Text>
+                <Button onClick={submitCart} colorScheme="blue" mt={4}>Submit Order</Button>
             </Box>
 
         </Flex>

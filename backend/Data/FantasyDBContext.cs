@@ -63,7 +63,7 @@ using backend.Models;
                 abilityDamageModifier = 290,
                 flavourText = "Staff imbued with a medium amount of arcane power, ideal for students studying the magical arts",
                 price = 700,
-                imgURL = ""
+                imgURL = "UL6p5QY"
             },
             new Weapon(){
                 weaponId = 5,
@@ -74,7 +74,7 @@ using backend.Models;
                 abilityDamageModifier = 600,
                 flavourText = "Staff imbued with a large amount of destructive fire magic, dangerous in the hands of an unskilled wizard, deadly in the hands of a skilled one.",
                 price = 2900,
-                imgURL = ""
+                imgURL = "6DCcB7b"
             }
         );
         builder.Entity<Armour>().HasData(
