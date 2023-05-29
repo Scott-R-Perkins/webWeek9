@@ -10,7 +10,6 @@ const Home = () => {
     const [potions, setPotions] = useState([])
     const [cart, setCart] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const placeholderImgURL = "https://via.placeholder.com/150";
     const imgurUrl = "https://i.imgur.com/";
 
     useEffect(() => {
