@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Root from './root/Root';
 import Home from './home/Home';
+import ShopAdmin from './shopAdmin/ShopAdmin';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         path: '',
         element: <Home />,
       },
+      {
+        path: '/admin',
+        element:<ShopAdmin />
+      }
     ],
   },
 ]);
