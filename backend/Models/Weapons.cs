@@ -10,12 +10,15 @@ public class Weapon
     public double? abilityDamageModifier { get; set; }
     public string? flavourText { get; set; }
     public int? price { get; set; }
+    public string? imgURL { get; set; }
 
-    public Weapon(){
+    public Weapon()
+    {
 
     }
 
-    public double getDps(int attackSpeed, int attackValue){
+    public double getDps(int attackSpeed, int attackValue)
+    {
         return attackSpeed * attackValue;
     }
 }

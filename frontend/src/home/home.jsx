@@ -11,6 +11,7 @@ const Home = () => {
     const [cart, setCart] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const placeholderImgURL = "https://via.placeholder.com/150";
+    const imgurUrl = "https://i.imgur.com/";
 
     useEffect(() => {
         fetchWeapons();
@@ -65,7 +66,7 @@ const Home = () => {
         <Box p={2} borderWidth={1} borderRadius="lg" maxW="sm">
             {/* Need to save an img url as part of the items on the backend, then call them as item.imgUrl or 
                 something instead of this placeholder*/}
-            <Image borderRadius="md" src={placeholderImgURL} /> 
+            <Image borderRadius="md" src={imgurUrl + item.imgUrl} /> 
             <Text fontSize='md'>{item.name}</Text>
             {category === 'weapon' &&
                 <>

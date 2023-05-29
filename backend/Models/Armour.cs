@@ -8,4 +8,5 @@ public class Armour
     public int? magicalDefenceValue { get; set; }
     public string? flavourText { get; set; }
     public int? price { get; set; }
+    public string? imgURL { get; set; }
 }
